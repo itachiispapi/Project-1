@@ -1,0 +1,103 @@
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #121212;
+  color: #f0f0f0;
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Game Container */
+.box {
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 255, 180, 0.2);
+  position: relative;
+}
+
+/* Typewriter Text */
+.typewriter {
+  overflow: hidden;
+  border-right: 3px solid #00ffb4;
+  white-space: normal;
+  word-break: break-word;
+  animation: caret 1s steps(1) infinite;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  min-height: 60px;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* HUD Styling */
+.hud {
+  background: #2a2a2a;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: left;
+  font-size: 0.95rem;
+  border: 1px solid #444;
+}
+
+/* Buttons */
+button,
+a {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  background-color: #00c78e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover,
+a:hover {
+  background-color: #00ffb4;
+  transform: scale(1.03);
+}
+
+/* Input fields */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  background-color: #2b2b2b;
+  color: #f0f0f0;
+  border: 1px solid #444;
+  border-radius: 6px;
+}
+
+/* Show choices only after typing finishes */
+#choiceForm {
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+#choiceForm.show {
+  opacity: 1;
+}
