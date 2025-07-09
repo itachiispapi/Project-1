@@ -16,6 +16,23 @@ body {
   padding: 20px;
 }
 
+/* Backgrounds for each page */
+.login_bg {
+  background: url('pink_background.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.game-bg {
+  background: url('purple_background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.end-bg {
+  background: url('sun_background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+
 /* Game Container */
 .box {
   background-color: #1e1e1e;
@@ -31,10 +48,8 @@ body {
 /* Typewriter Text */
 .typewriter {
   overflow: hidden;
-  border-right: 3px solid #00ffb4;
   white-space: normal;
   word-break: break-word;
-  animation: caret 1s steps(1) infinite;
   font-size: 1rem;
   margin-bottom: 20px;
   min-height: 60px;
@@ -61,10 +76,11 @@ body {
 button,
 a {
   display: block;
+  font-family: 'Courier New', Courier, monospace;
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
-  background-color: #00c78e;
+  background-color: #7400c7;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -77,7 +93,7 @@ a {
 
 button:hover,
 a:hover {
-  background-color: #00ffb4;
+  background-color: #c457ff;
   transform: scale(1.03);
 }
 
@@ -100,4 +116,40 @@ input {
 
 #choiceForm.show {
   opacity: 1;
+}
+
+.leaderboard{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:230px;
+  background:rgba(34,34,34,.85);   /* dark translucent */
+  backdrop-filter:blur(4px);
+  color:#fff;
+  border:1px solid #444;
+  border-radius:8px;
+  padding:12px;
+  font-size:.8rem;
+  z-index:999;                    /* stays on top */
+}
+
+.leaderboard h3{
+  margin:0 0 6px 0;
+  font-size:.9rem;
+  text-align:center;
+}
+
+.leaderboard table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.leaderboard th,
+.leaderboard td{
+  padding:4px;
+  text-align:left;
+}
+
+.leaderboard tr:nth-child(even){
+  background:rgba(255,255,255,.05);
 }
