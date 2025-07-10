@@ -205,6 +205,9 @@ if (isset($cur['requires_item']) && isset($cur['success_scene'])) {
 </head>
 
 <body class="<?= $bgClass ?>">
+ <?php if ($_SESSION['scene'] === 'ending_hero' || $_SESSION['scene'] === 'ending_freedom'): ?>
+  <div class="confetti"></div>
+<?php endif; ?>   
     <?php if ($topScores !== null) : ?>
         <div class="leaderboard">
             <h3>Top Adventurers</h3>
@@ -230,12 +233,12 @@ if (isset($cur['requires_item']) && isset($cur['success_scene'])) {
             <p>Inventory: <?= implode(', ', $_SESSION['inventory']) ?: 'None' ?></p>
         </div>
         
-        <div id="story" class="typewriter" data-text="<?=htmlspecialchars($cur['text'])?>"></div>
+        <div id="story" class="typewriter story-text" data-text="<?=htmlspecialchars($cur['text'])?>"></div>
 
         <?php if($cur['choices']):?>
         <form method="post" id="choiceForm">
             <?php foreach($cur['choices'] as $txt=>$next):?>
-            <button name="choice" value="<?=$txt?>"><?=ucfirst($txt)?></button>
+            <button class="choice" name="choice" value="<?=$txt?>"><?=ucfirst($txt)?></button>
             <?php endforeach;?>
         </form>
 

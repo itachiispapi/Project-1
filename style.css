@@ -14,6 +14,7 @@ body {
   align-items: center;
   min-height: 100vh;
   padding: 20px;
+  transition: background 0.6s ease-in-out;
 }
 
 /* Backgrounds for each page */
@@ -152,4 +153,56 @@ input {
 
 .leaderboard tr:nth-child(even){
   background:rgba(255,255,255,.05);
+}
+.story-text {
+  opacity: 0;
+  animation: fadeIn 1.2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.choice {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: slideIn 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+}
+#choiceForm.show .choice {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: slideIn 0.6s ease-out forwards;
+}
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+  background-image:
+    radial-gradient(circle, #ff0 3px, transparent 4px),
+    radial-gradient(circle, #f0f 3px, transparent 4px),
+    radial-gradient(circle, #0ff 3px, transparent 4px),
+    radial-gradient(circle, #0f0 3px, transparent 4px),
+    radial-gradient(circle, #f00 3px, transparent 4px),
+    radial-gradient(circle, #00f 3px, transparent 4px);
+  background-repeat: repeat;
+  background-size: 30px 30px;
+  animation: fallConfetti 1.5s ease-in-out 2;
+}
+
+@keyframes fallConfetti {
+  0% { background-position: 0 -100px; opacity: 0; }
+  50% { opacity: 1; }
+  100% { background-position: 0 100vh; opacity: 0; }
 }
