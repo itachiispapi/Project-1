@@ -206,8 +206,19 @@ if (isset($cur['requires_item']) && isset($cur['success_scene'])) {
 
 <body class="<?= $bgClass ?>">
  <?php if ($_SESSION['scene'] === 'ending_hero' || $_SESSION['scene'] === 'ending_freedom'): ?>
-  <div class="confetti"></div>
-<?php endif; ?>   
+  <div class="confetti-container">
+    <?php for ($i = 0; $i < 30; $i++): ?>
+      <div class="confetti-piece"></div>
+      <?php for ($i = 0; $i < 30; $i++): 
+  $left = rand(0, 100);
+  $delay = rand(0, 200) / 100; // delay in seconds
+  $colors = ['#f00', '#0f0', '#00f', '#ff0', '#0ff', '#f0f'];
+  $color = $colors[array_rand($colors)];
+?>
+  <div class="confetti-piece" style="left: <?= $left ?>%; background-color: <?= $color ?>; animation-delay: <?= $delay ?>s;"></div>
+<?php endfor; ?>
+  </div>
+<?php endif; ?>  
     <?php if ($topScores !== null) : ?>
         <div class="leaderboard">
             <h3>Top Adventurers</h3>
